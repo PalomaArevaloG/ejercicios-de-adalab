@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px rgb(245, 89, 89);
+    flex-wrap: wrap;
+}
+
+.box {
+    border: solid 1px green;
+}

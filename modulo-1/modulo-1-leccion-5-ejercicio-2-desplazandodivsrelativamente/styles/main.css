@@ -1,0 +1,36 @@
+.padre {
+    border: solid 1px black;
+}
+
+.box1 {
+    width: 300px;
+    height: 300px;
+    margin: 40px;
+    padding: 30px;
+    background: blue;
+    position: relative;
+    left: 100px;
+    top: 50px;
+}
+
+.box2 {
+    width: 300px;
+    height: 300px;
+    margin: 40px;
+    padding: 30px;
+    background: green;
+    position: relative;
+    right: 150px;
+    bottom: 320px;
+}
+
+.box3 {
+    width: 300px;
+    height: 300px;
+    margin: 40px;
+    padding: 30px;
+    background: pink;
+    position: relative;
+    left: 180px;
+    bottom: 240px;
+}

@@ -1,0 +1,12 @@
+/* quitamos viñetas en lista */
+
+ul {
+    list-style-type: none;
+}
+
+
+/* quito margenes */
+
+* {
+    margin: 0
+}
