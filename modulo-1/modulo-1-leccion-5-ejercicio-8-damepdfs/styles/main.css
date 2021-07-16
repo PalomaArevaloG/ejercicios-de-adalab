@@ -1,0 +1,6 @@
+p {
+    background: red;
+    position: relative;
+    display: inline;
+    left: 100%;
+}

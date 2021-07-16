@@ -1,0 +1,9 @@
+.div1 {
+    border: solid 1px #000000;
+    max-width: 600px;
+    width: 86%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
