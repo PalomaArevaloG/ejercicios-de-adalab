@@ -1,0 +1,76 @@
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.header .logo {
+    height: 35px;
+}
+
+.header .menu {
+    height: 20px;
+}
+
+.header .menu-icon {}
+
+.trial {
+    background-color: cornflowerblue;
+    height: 50vh;
+    color: white;
+    border: solid 1px black;
+}
+
+.trial .title1 {
+    border: solid 1px red;
+}
+
+.trial .subtitle1 {
+    border: solid 1px red;
+}
+
+.trial .disclaimer {
+    border: solid 1px red;
+}
+
+a {
+    background-color: green;
+    border-radius: 20px;
+}
+
+.benefits {
+    border: solid 1px black;
+}
+
+.benefits .title2 {
+    border: solid 1px red;
+}
+
+.why {
+    border: solid 1px black;
+}
+
+.why .title3 {
+    border: solid 1px red;
+}
+
+.footer {
+    background-color: black;
+}
+
+
+/*mobile*/
+
+@media all and (max-width 768px) {}
+
+
+/*tablet*/
+
+@media all and(min-width 769px) and (max-width 1200px) {}
+
+
+/*desktop*/
+
+@media all and (min-width 1201px) {}

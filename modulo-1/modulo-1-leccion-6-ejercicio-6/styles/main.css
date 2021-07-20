@@ -1,0 +1,46 @@
+/* mediaqueries */
+
+.container {
+    margin: 20px;
+    border: solid red 2px;
+}
+
+.title {
+    font: size 32px;
+    font-weight: bold;
+}
+
+p {
+    font: size 18px;
+    line: height 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        margin: 30px;
+        border: solid green 2px;
+    }
+    .title {
+        font: size 28px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .container {
+        margin: 190px;
+        border: solid blue 2px;
+    }
+    .title {
+        font: size 42px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
