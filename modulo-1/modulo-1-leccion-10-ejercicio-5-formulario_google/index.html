@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form class="form" action="" method="post">
         <fieldset>
             <label for="name">Nombre</label>
             <input type="text" id="name" name="name" placeholder="Nombre" required />
@@ -27,19 +27,22 @@
             <label for="confirmpassword">Confirma tu contraseña</label>
             <input type="password" id="confirmpassword" name="confirmpassword" required/>
 
-            <label for="dia">Fecha de nacimiento</label>
-            <input type="number" id="dia" name="dia" required/>
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="number" id="nacimiento" name="dia" required/>
 
-            <select id="mes" name="mes">
+            <select id="nacimiento" name="mes">
                 <option value="enero">Enero</option>
                 <option value="Febrero">Febrero</option>
+                <input type="number" id="nacimiento" name="year" required/>
              </select>
+            <fieldset>
+                <label for="sex">Sexo</label>
+                <input type="radio" name="sexo" value="mujer" />Mujer
+                <input type="radio" name="sexo" value="hombre" />Hombre
+            </fieldset>
 
-            <label for="sex">Sexo</label>
-            <select id="sex" name="sex">
-                <option value="Mujer">Mujer</option>
-                <option value="Hombre">Hombre</option>
-             </select>
+
+
             <label for="phone">Teléfono móvil</label>
             <input type="tel" id="phone" name="phone" required/>
             <label for="emailAddress">Tu dirección de correo electrónico actual</label>
