@@ -1,0 +1,11 @@
+body {
+    padding: 200px;
+}
+
+@keyframes animacion {
+    from {}
+}
+
+.form {
+    float: right;
+}

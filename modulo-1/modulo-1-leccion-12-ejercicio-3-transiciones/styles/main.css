@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    border: red solid;
+    margin-bottom: 15px;
+}
+
+.popup {
+    width: 25vw;
+    height: 25vh;
+    border: grey solid;
+    color: aqua;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@keyframes pop {
+    from {}
+    to {
+        translate: 250px;
+    }
+}
+
+:hover.popup {
+    animation-name: pop;
+}
