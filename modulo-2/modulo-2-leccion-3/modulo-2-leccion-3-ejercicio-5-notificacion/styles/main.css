@@ -1,0 +1,21 @@
+.box {
+    border: solid black 2px;
+}
+
+.success {
+    border: solid green 2px;
+    background-color: lightgreen;
+    color: green;
+}
+
+.error {
+    border: solid red 2px;
+    background-color: lightgreen;
+    color: red;
+}
+
+.warning {
+    border: solid yellow 2px;
+    background-color: lightgreen;
+    color: yellow;
+}
