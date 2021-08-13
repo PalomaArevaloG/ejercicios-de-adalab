@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body>
+    <h1>practica</h1>
+    <ul>
+        <li>
+            En esta misma página abrimos las herramientas para desarrolladoras de Chrome (DevTools) y seleccionamos la pestaña Consola.
+        </li>
+        <li>
+            Escribimos el siguiente código: document.querySelectorAll('h1'). ¿Qué está devolviendo este método?
+            <strong>NodeList(11) [h1.reset-3c756112--pageTitle-33dc39a3,
+					h1#contenidos.blockHeading-442b4f12,
+					h1#introduccion.blockHeading-442b4f12--blockHeading1WithMargin-b69d755e</strong
+				>
+			</li>
+			<li>
+				Y si escribimos document.querySelectorAll('h1')[0] ¿qué está mostrando
+				en consola este código?<strong>Elprimer h1</strong>
+        </li>
+        <li>
+            Ahora escribimos document.querySelectorAll('h1')[0].className. ¿qué información nos muestra?<strong>"reset-3c756112--pageTitle-33dc39a3"</strong
+				>
+				¿Y el código document.querySelectorAll('h1')[0].innerText?<strong
+					>"2.7 Arrays y bucles"</strong
+				>
+			</li>
+			<li>
+				Y por último ¿qué muestra el código
+				<strong
+					>NodeList []length: 0[[Prototype]]: NodeListentries: ƒ
+					entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length:
+					(...)values: ƒ values()constructor: ƒ
+					NodeList()Symbol(Symbol.iterator): ƒ
+					values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ
+					length()[[Prototype]]: Object</strong
+				>
+				y por qué?
+			</li>
+		</ul>
+
+		<script type="text/javascript" src="./js/main.js"></script>
+	</body>
+</html>
