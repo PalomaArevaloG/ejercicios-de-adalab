@@ -1,0 +1,14 @@
+.box1 {
+    box-sizing: border-box;
+    width: 150px;
+    padding: 50px;
+    border: solid blue 5px;
+    text-align: left;
+}
+
+.box2 {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 100px;
+    border: solid red 2px;
+}
