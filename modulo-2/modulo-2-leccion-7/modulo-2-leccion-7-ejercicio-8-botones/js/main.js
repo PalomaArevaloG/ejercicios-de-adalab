@@ -1,8 +1,11 @@
 "use strict";
-// Guardamos una lista de todos los parrafos de la página
+
 const buttons = document.querySelectorAll("button");
+const body = document.querySelector("body");
 
-
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].classList.add("red");
+function change() {
+    body.classList.toggle("red");
 }
+buttons[0].addEventListener("click", change);
+buttons[1].addEventListener("click", change);
+buttons[2].addEventListener("click", change);

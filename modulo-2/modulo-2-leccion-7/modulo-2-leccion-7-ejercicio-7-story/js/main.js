@@ -8,7 +8,7 @@ const adalabers = [{
     },
     {
         name: "Lucía",
-        age: 31,
+        age: 21,
         profession: "ingeniera",
     },
     {
@@ -27,23 +27,46 @@ const adalabers = [{
         profession: "diseñadora",
     },
 ];
+//Una función countAdalabers que devuelve el número de adalabers en el listado
+function countAdalabers(adalabers) {
+    console.log(`Tenemos ` + adalabers.length + ` adalabers`); //5
+}
+countAdalabers(adalabers);
 
-countAdalabers;
-averageAge;
-theYoungest;
-countDesigners;
+//Una función averageAge que devuelve la media de edad de listado.
+function averageAge(adalabers) {
+    let totalAge = 0;
+    for (let i = 0; i < adalabers.length; i++) {
+        totalAge += adalabers[i].age;
+    }
+    let media = totalAge / adalabers.length;
+    console.log("La media de edad es ", media); //28
+}
+averageAge(adalabers);
 
-// console.log(contacts[0].name); // Muestra el nombre del primer contacto (Raquel)
-// contacts[2].email = "laura@inbox.com"; // Cambia el email del tercer contacto
-// console.log(contacts[2].email); // Muestra el email del tercer contacto ('laura@inbox.com')
+//Una función theYoungest que devuelve el nombre de la adalaber más joven.
+function theYoungest(adalabers) {
+    let ageAdalabers = [];
+    for (let i = 0; i < adalabers.length; i++) {
+        ageAdalabers[i] = adalabers[i].age;
+    }
+    let result = Math.min.apply(null, ageAdalabers);
+    for (let i = 0; i < adalabers.length; i++) {
+        if (adalabers[i].age === result) {
+            console.log(`La más joven es ${adalabers[i].name}`); // Inma
+        }
+    }
+}
+theYoungest(adalabers);
+//Una función countDesigners que devuelve el número de adalabers que son diseñadoras.
+function countDesignerst(adalabers) {
+    let acc = 0;
+    for (let i = 0; i < adalabers.length; i++) {
+        if (adalabers[i].profession === "diseñadora") {
+            acc += 1;
+        }
+    }
+    console.log(`Hay ${acc} diseñadoras`); // 2
+}
 
-// // Tarea con participantes (objeto con array dentro)
-// const task = {
-//     name: "Crear un repositorio",
-//     participants: ["Raquel", "Pedro", "Laura"],
-// };
-
-// console.log(task.participants[0]); // Muestra el nombre del primer participante (Raquel)
-// task.participants.push("Diego"); // Añade un nuevo participante a la lista
-// task.participants[0] = "Andrea"; // Cambia el nombre del primer participante
-// console.log(task.participants); // Muestra Andrea, Pedro, Laura, Diego
+countDesignerst(adalabers);
