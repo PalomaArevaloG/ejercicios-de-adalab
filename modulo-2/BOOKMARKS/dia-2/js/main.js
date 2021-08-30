@@ -10,11 +10,11 @@ const listData = document.querySelector('.js_list_data');
 
 // Día 2: Variables para el primer bookmark:
 
-const bmk_1_url = 'https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-2-programando-la-web/javascript/2_1_intro_a_la_programacion';
-const bmk_1_desc = 'JS en los materiales de Adalab';
-const bmk_1_seen = 'checked title="Enlace leído"';
+const bmk_1_url    = 'https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-2-programando-la-web/javascript/2_1_intro_a_la_programacion';
+const bmk_1_desc   = 'JS en los materiales de Adalab';
+const bmk_1_seen   = 'checked title="Enlace leído"';
 const bmk_1_tags_1 = 'javascript';
-const bmk_1_tags_2 = '';
+const bmk_1_tags_2 = 'html';
 
 // Nota: Uso _ en los nombres, pero por una razón académica
 // En JS se suele usar la notación camelCase para los identificadores
@@ -44,32 +44,13 @@ let html = `
 
 // Día 2: Vamos con el segundo bookmark:
 
-const bmk_2_url = 'https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/';
-const bmk_2_desc = 'Ideas de proyectos JS';
-const bmk_2_seen = 'checked title="Enlace leído"';
-const bmk_2_tags_1 = '';
-const bmk_2_tags_2 = '';
+const bmk_2_url    = 'https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/';
+const bmk_2_desc   = 'Ideas de proyectos JS';
+const bmk_2_seen   = 'checked title="Enlace leído"';
+const bmk_2_tags_1 = 'javascript';
+const bmk_2_tags_2 = 'portfolio';
 
-if (bmk_2_tags_1 === "" && bmk_2_tags_2 === "") {
-    html += `
-  <li class="data__listitem">
-    <article class="data__item">
-      <p class="item__url">
-        <a href="${bmk_2_url}" target="_blank" rel="noopener noreferrer">
-          ${bmk_2_url}
-        </a>
-      </p>
-      <p class="item__seen">
-        <input type="checkbox" ${bmk_2_seen} name="item_imp_2" id="item_imp_2">
-      </p>
-      <p class="item__desc">${bmk_2_desc}</p>
-    </article>
-  </li>
-  `;
-
-} else {
-
-    html += `
+html += `
   <li class="data__listitem">
     <article class="data__item">
       <p class="item__url">
@@ -88,15 +69,12 @@ if (bmk_2_tags_1 === "" && bmk_2_tags_2 === "") {
     </article>
   </li>
   `;
-}
-
-
 
 // Día 2: Tercer bookmark (y tantos como quieras):
 
-const bmk_3_url = 'https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-1-html-y-css/1_1_intro_a_la_web';
-const bmk_3_desc = 'HTML en los materiales de Adalab';
-const bmk_3_seen = 'title="Por leer"';
+const bmk_3_url    = 'https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-1-html-y-css/1_1_intro_a_la_web';
+const bmk_3_desc   = 'HTML en los materiales de Adalab';
+const bmk_3_seen   = 'title="Por leer"';
 const bmk_3_tags_1 = 'html';
 const bmk_3_tags_2 = 'css';
 
@@ -121,27 +99,6 @@ html += `
   `;
 
 listData.innerHTML = html;
-
-if (bmk_3_tags_1 === "") {
-
-
-}
-
-
-// Día 3: Mostrar vista de tarjetas
-
-const boardData = document.querySelector('.js_boarddata');
-
-if (boardData.classList.contains('tableview')) {
-    // Tiene la clase tableview
-    boardData.classList.remove('tableview');
-    boardData.classList.add('listview');
-} else if (boardData.classList.contains('listview')) {
-    // Tiene la clase listview
-    boardData.classList.remove('listview');
-    boardData.classList.add('tableview');
-}
-
 
 /*
 // Día 1: Probando a mostrar el desplegable del menú hamburguesa
