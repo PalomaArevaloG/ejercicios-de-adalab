@@ -9,12 +9,22 @@ const items = [
     },
 ];
 
-// //recorro arreglo
-for (let i = 0; i < items.length; i++) {
-    let parents = items[3];
-    console.log(
-        `El dato ${items[i]} está en la posición ${i} y es de tipo ${typeof items[
-			i
-		]}`
-    );
+function info() {
+    for (let i = 0; i < items.length; i++) {
+        let dato = items[i];
+        let position = i;
+        let type = typeof items[i];
+        let parents = items[3];
+        if (position === 3) {
+            for (const property in parents)
+                console.log(
+                    `El dato ${property} está en la posición ${position} y es de tipo ${type}`
+                );
+        } else {
+            console.log(
+                `El dato ${dato} está en la posición ${position} y es de tipo ${type}`
+            );
+        }
+    }
 }
+info();
