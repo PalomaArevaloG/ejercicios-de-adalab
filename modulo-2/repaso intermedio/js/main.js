@@ -5,7 +5,8 @@ const face = document.querySelector(".face");
 const select = document.querySelector(".select");
 const button = document.querySelector(".btn");
 
-function changeMood() {
+function handleUpdateButton(event) {
+    event.preventDefault();
     face.innerHTML = select.value;
     let number = getRandomInt(101);
 
@@ -19,9 +20,13 @@ function changeMood() {
     console.log(number);
 }
 
+/*function updateBackground() {
+    const randomNumber = Math.round(Math.random() * 100);
+}*/
+
 function getRandomInt(max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * max);
 }
 
-button.addEventListener("click", changeMood);
+button.addEventListener("click", handleUpdateButton);
