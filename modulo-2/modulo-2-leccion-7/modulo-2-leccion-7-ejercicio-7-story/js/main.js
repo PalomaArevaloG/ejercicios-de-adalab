@@ -46,20 +46,29 @@ averageAge(adalabers);
 
 //Una función theYoungest que devuelve el nombre de la adalaber más joven.
 function theYoungest(adalabers) {
-    let ageAdalabers = [];
-    for (let i = 0; i < adalabers.length; i++) {
-        ageAdalabers[i] = adalabers[i].age;
-    }
-    let result = Math.min.apply(null, ageAdalabers);
-    for (let i = 0; i < adalabers.length; i++) {
-        if (adalabers[i].age === result) {
-            console.log(`La más joven es ${adalabers[i].name}`); // Inma
+    let ageYoungest = adalabers[0].age;
+    for (const item of adalabers) {
+        if (item.age < ageYoungest) {
+            ageYoungest = item.name;
         }
     }
+    return ageYoungest;
+
+    // let ageAdalabers = [];
+    // for (let i = 0; i < adalabers.length; i++) {
+    //     ageAdalabers[i] = adalabers[i].age;
+    // }
+    // let result = Math.min.apply(null, ageAdalabers);
+    // for (let i = 0; i < adalabers.length; i++) {
+    //     if (adalabers[i].age === result) {
+    //         console.log(`La más joven es ${adalabers[i].name}`); // Inma
+    //     }
+    // }
 }
-theYoungest(adalabers);
+console.log(`La más joven es ` + theYoungest(adalabers));
+//theYoungest(adalabers);
 //Una función countDesigners que devuelve el número de adalabers que son diseñadoras.
-function countDesignerst(adalabers) {
+function countDesigners(adalabers) {
     let acc = 0;
     for (let i = 0; i < adalabers.length; i++) {
         if (adalabers[i].profession === "diseñadora") {
@@ -69,4 +78,4 @@ function countDesignerst(adalabers) {
     console.log(`Hay ${acc} diseñadoras`); // 2
 }
 
-countDesignerst(adalabers);
+countDesigners(adalabers);

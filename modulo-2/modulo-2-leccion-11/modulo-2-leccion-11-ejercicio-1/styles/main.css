@@ -1,0 +1,26 @@
+li {
+    color: blue;
+    margin-bottom: 5px;
+}
+
+.answer {
+    color: red;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.form {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}

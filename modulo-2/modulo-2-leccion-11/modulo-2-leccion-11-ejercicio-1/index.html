@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 11.1</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body>
+    <main>
+        <h1>API STARWARS</h1>
+        <p>
+            Vamos a explorar un API abierto de información sobre el mundo Star Wars. En esta página tenemos la documentación completa del API y un formulario que nos permite hacer peticiones a la URL que indiquemos.
+        </p>
+        <p class="form">Identifica la siguiente información sobre SWAPI:</p>
+        <ol>
+            <li>la URL base del API</li>
+            <p class="answer">https://swapi.dev/api/</p>
+            <li>si necesita autenticación</li>
+            <p class="answer">
+                Swapi is a completely open API. No authentication is required to query and get data. This also means that we've limited what you can do to just GET-ing the data. If you find a mistake in the data, then tweet the author or email him.
+            </p>
+            <li>método HTTP que deben usar las peticiones a este API</li>
+            <p class="answer">GET-ing</p>
+            <li>URL para acceder a la info del personaje "Luke Skywalker"</li>
+            <p class="answer">https://swapi.dev/api/people/1/</p>
+            <li>URL para acceder a la info de la película "A New Hope"</li>
+            <p class="answer">https://swapi.dev/api/films/1/</p>
+            <li>
+                a qué otros recursos puedo acceder desde el API además de personajes y pelis
+            </li>
+            <p class="answer">Starships, planets species, vehicles</p>
+            <li>URL para acceder al listado de personajes, ¿está paginada?</li>
+            <p class="answer">
+                https://swapi.dev/api/people si https://swapi.dev/api/people?page=2
+            </p>
+            <li>cómo puedo buscar personajes mediante la URL</li>
+            <p class="answer">
+                https://swapi.dev/api/people/?search=r2 o https://swapi.dev/api/people/?search=leia
+            </p>
+            <li>
+                cómo puedo hacer que el JSON de una petición se me devuelva traducido a Wookiee
+            </li>
+            <p class="answer">añadiendo ?format=wookiee al final</p>
+        </ol>
+    </main>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

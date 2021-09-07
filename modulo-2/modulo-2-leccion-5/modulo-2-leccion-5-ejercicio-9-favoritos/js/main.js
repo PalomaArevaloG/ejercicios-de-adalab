@@ -1,6 +1,7 @@
 "use strict";
 
 // // Añadir la clase.teacher--selected si no la tiene, o quitarla si la tiene.
+
 const isra = document.querySelector(".teacher--isra");
 const tuerto = document.querySelector(".teacher--tuerto");
 const nasi = document.querySelector(".teacher--nasi");
