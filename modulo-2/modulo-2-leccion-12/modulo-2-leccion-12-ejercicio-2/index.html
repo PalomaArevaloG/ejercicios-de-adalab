@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- pendiente -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body>
+    <main>
+        <form>
+            <label for="city">Elige una ciudad:</label>
+            <select class="js-select" id="city" name="city">
+					<option disabled selected>Escoge una ciudad</option>
+					<!-- no se puede volver a escoger pero sale preseleccionada -->
+					<option value="Madrid" id="Madrid">Madrid</option>
+					<option value="París" id="París">París</option>
+					<option value="NuevaYork" id="NuevaYork">Nueva York</option>
+				</select>
+        </form>
+        <div class="js_images"></div>
+    </main>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
