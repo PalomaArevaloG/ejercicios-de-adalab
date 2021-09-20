@@ -1,13 +1,12 @@
 // Fichero src/components/App.js
-import '../styles/App.scss';
+import '../styles/App.css';
 
 function App() {
-    return ( <
-        div >
-        <
-        h1 > Hola mundo < /h1>{' '} <
-        /div>
-    );
+	return (
+		<div>
+			<h1> Hola mundo </h1>
+		</div>
+	);
 }
 
 export default App;
