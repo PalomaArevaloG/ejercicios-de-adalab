@@ -1,0 +1,5 @@
+{
+  user: "Mari Carmen",
+  email: "mari@gmail.com",
+  age: 28,
+};

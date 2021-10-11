@@ -1,7 +1,7 @@
 const resultsLimit = 10;
 
 function getContactsFromApi() {
-	return fetch(`//randomuser.me/api/?results=5${resultsLimit}`)
+	return fetch(`https://randomuser.me/api/?results=5${resultsLimit}`)
 		.then((response) => response.json())
 		.then((json) => {
 			return json.results.map((contact) => {
@@ -13,6 +13,9 @@ function getContactsFromApi() {
 					city: contact.location.city,
 					gender: contact.gender,
 					uuid: contact.login.uuid,
+					email: contact.email,
+					username: contact.login.username,
+					country: contact.country,
 				};
 			});
 		});

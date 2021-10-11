@@ -4,18 +4,29 @@ import '../styles/App.scss';
 import getContactsFromApi from '../services/contactsApi'; //importo las funciones de objecttoexport
 import { useEffect, useState } from 'react';
 import ContactList from './ContactList';
+import Filters from './Filters';
+import ContactDetail from './ContactDetail';
+import { Route, Switch, useRouteMatch } from 'react-router';
+import ls from '../services/ls.js';
 
 function App() {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
 	const [searchGender, setSearchGender] = useState('all');
 	useEffect(() => {
-		//llamo al fetch
-		getContactsFromApi().then((initialData) => {
-			console.log(initialData);
-			setData(initialData); //lo guardo en la variable estado
-		});
-	}, []); //lo dejo vacio xq quiero que se ejecute cuando se habra la pagina
+		//cache
+		if (ls.get('contacts', []).length > 0) {
+			console.log(ls.get('contacts', []));
+			setData(ls.get('contacts', []));
+		} else {
+			//llamo al fetch
+			getContactsFromApi().then((initialData) => {
+				console.log(initialData);
+				setData(initialData); //lo guardo en la variable estado
+				ls.set('contacts', initialData);
+			});
+		}
+	}, []);
 
 	//filtro
 	const handleSearchName = (ev) => {
@@ -24,6 +35,14 @@ function App() {
 	const handleSearchGender = (ev) => {
 		setSearchGender(ev.currentTarget.value);
 	};
+	//rutas
+	const routeData = useRouteMatch('/user/:id');
+	const contactId = routeData !== null ? routeData.params.id : '';
+
+	const selectedContact = data.find((contact) => contact.uuid === contactId);
+
+	console.log(selectedContact);
+
 	const filteredData = data
 		.filter((contact) =>
 			contact.name
@@ -38,127 +57,33 @@ function App() {
 		<>
 			<h1 className="title--big">Directorio de personas</h1>
 			<div className="col2">
-				<section>
-					<form>
-						<label
-							className="form__label display-block"
-							htmlFor="name">
-							Filtrar por nombre:
-						</label>
-						<input
-							className="form__input-text"
-							type="text"
-							name="name"
-							id="name"
-							value={searchName}
-							onChange={handleSearchName}
-						/>
-						<label
-							className="form__label display-block"
-							htmlFor="gender">
-							Género:
-						</label>
-						<select
-							className="form__input-text"
-							name="gender"
-							id="gender"
-							value={searchGender}
-							onChange={handleSearchGender}>
-							<option value="all">Todos</option>
-							<option value="female">Mujer</option>
-							<option value="male">Hombre</option>
-							<option value="no-binary">No binario</option>
-						</select>
-						<label
-							className="form__label display-block"
-							htmlFor="gender">
-							Ciudad:
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Stockach"
+				<Switch>
+					<Route path="/user/:id">
+						{/* tendrá otra pagina (ruta) */}
+
+						<section>
+							<ContactDetail user={selectedContact} />
+						</section>
+					</Route>
+					<Route exact path="/">
+						{/* switch cogerá el primer route que empieza por / por lo que / se pone alfinal con un exact*/}
+						<section>
+							<Filters
+								searchName={searchName}
+								searchGender={searchGender}
+								handleSearchName={handleSearchName}
+								handleSearchGender={handleSearchGender}
 							/>
-							Stockach
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Shelbourne"
-							/>
-							Shelbourne
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Valencia"
-							/>
-							Valencia
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Köyliö"
-							/>
-							Köyliö
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Madrid"
-							/>
-							Madrid
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Orange"
-							/>
-							Orange
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Folkestad"
-							/>
-							Folkestad
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Ely"
-							/>
-							Ely
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Invercargill"
-							/>
-							Invercargill
-						</label>
-						<label className="display-block">
-							<input
-								type="checkbox"
-								name="location"
-								value="Muğla"
-							/>
-							Muğla
-						</label>
-					</form>
-				</section>
-				<section>
-					<ContactList data={filteredData} />
-				</section>
+						</section>
+						<section>
+							<ContactList data={filteredData} />
+						</section>
+					</Route>
+					<Route>
+						{/* se pone al final */}
+						<section>Oh! pagina equivocada</section>
+					</Route>
+				</Switch>
 			</div>
 		</>
 	);
