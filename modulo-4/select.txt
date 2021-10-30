@@ -1,0 +1,69 @@
+-- Seleccionar el id y el email de todas las usuarias
+SELECT id, email FROM users
+
+-- Seleccionar todas las columnas o datos de todas las usuarias
+SELECT * FROM users
+-- El símbolo `*` indica que quiero seleccionar todas las columnas de una tabla.
+
+-- Seleccionar todas las columnas de todas las usuarias cuyo id sea mayor o igual que 2
+SELECT * FROM users WHERE id >= 2
+-- Esto nos devolverá 0, 1 o varios registros
+
+-- Seleccionar todas las columnas de todas las usuarias cuyo id sea mayor o igual que 2
+SELECT * FROM users WHERE id >= 2
+-- Esto nos devolverá 0, 1 o varios registros
+
+-- Seleccionar todas las columnas de la usuaria cuyo id sea igual a 2, esto nos devolverá solo un registro
+SELECT * FROM users WHERE id = 2
+-- Esto nos devolverá 0 o 1 registros en función de si en la tabla existe el id
+
+-- Seleccionar todas las columnas de la usuaria cuyo email sea lucia@hotmail.com
+SELECT * FROM users WHERE email = 'lucia@hotmail.com'
+
+-- Seleccionar todas las columnas de la usuaria cuyo email sea lucia@hotmail.com y el password sea qwertyui
+SELECT * FROM users WHERE email = 'lucia@hotmail.com' AND password = 'qwertyui'
+
+-- Seleccionar todas las columnas de todas las usuarias ordenadas por nombre de forma ascendente: A-Z
+SELECT * FROM users ORDER BY name ASC
+
+-- ASC es el orden por defecto, así que lo podemos omitir. Esta query es igual que la anterior
+SELECT * FROM users ORDER BY name
+
+-- Seleccionar todas las columnas de todas las usuarias ordenadas por nombre de forma descendente: Z-A
+SELECT * FROM users ORDER BY name DESC
+
+-- Seleccionar todas las columnas de todas las usuarias ordenadas por nombre de forma descendente y a continuación por email de forma descendente
+SELECT * FROM users ORDER BY name ASC, email DESC
+
+-- Seleccionar todas las columnas hasta un máximo de 2 usuarias
+SELECT * FROM users LIMIT 2
+-- Esta query nos devuelve como máximo 2 registros aunque la tabla tenga más
+
+-- Seleccionar todas las columnas hasta un máximo de 2 usuarias empezando en la posición 5
+SELECT * FROM users LIMIT 2 OFFSET 5
+-- Esta consulta nos devolverá los registros 6º y 7º.
+
+-- Query de los primeros 50 tweets: seleccionar todos los tweets hasta un máximo de 50 tweets
+SELECT * FROM tweets ORDER BY id LIMIT 50
+-- Esta consulta nos devolverá los registros desde el id 1 hasta el id 49
+
+
+-- Query de los siguientes 50 tweets: seleccionar todos los tweets hasta un máximo de 50 tweets empezando por el número 50
+SELECT * FROM tweets ORDER BY id LIMIT 50 OFFSET 50
+-- Esta consulta nos devolverá los registros desde el id 50 hasta el id 99
+
+-- Seleccionar todas las columnas de todas las usuarias que tengan un id diferente de 2
+SELECT * FROM users WHERE id <> 2
+
+-- Seleccionar todas las columnas de la usuaria que tenga un id = 2 o un email = lucia@hotmail.com
+SELECT * FROM users WHERE id = 1 OR email = 'lucia@hotmail.com'
+
+-- Seleccionar todas las columnas de todas las usuarias cuyo email contenga la palabra: gmail
+SELECT * FROM users WHERE email LIKE '%gmail%'
+-- LIKE es muy usado para hacer búsquedas por palabras en una base de datos
+
+
+
+
+
+
